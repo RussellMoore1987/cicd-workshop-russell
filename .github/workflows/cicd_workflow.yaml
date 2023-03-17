@@ -30,9 +30,11 @@ jobs:
           echo "$RSA_PRIVATE_KEY" > private_key && chmod 600 private_key
           ssh -o StrictHostKeyChecking=no -i private_key ${EC2_SSH_USERNAME}@${EC2_SSH_PUBLIC_IP_ADDRESS} '
           
+            echo "navigating to directory \n" &&
             cd /var/www/html &&
             sudo git checkout main &&
             sudo git fetch --all &&
             sudo git reset --hard origin/main &&
-            sudo git pull origin main
+            sudo git pull origin main &&
+            npm install
           '
