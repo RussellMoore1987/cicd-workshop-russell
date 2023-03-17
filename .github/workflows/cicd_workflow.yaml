@@ -38,7 +38,7 @@ jobs:
             sudo git checkout main && echo " " && echo " " &&
 
             echo "**Command: git fetch ---------------------------------------------------" &&
-            sudo git fetch --all && echo " " && echo " " && echo " " &&
+            sudo git fetch --all && echo " " && echo " " &&
 
             echo "**Command: git reset ---------------------------------------------------" &&
             sudo git reset --hard origin/main && echo " " && echo " " &&
