@@ -32,8 +32,16 @@ jobs:
           
             echo "**navigating to directory" &&
             cd /var/www/html &&
+
+            echo "**checkout main" &&
             sudo git checkout main &&
+
+            echo "**git fetch" &&
             sudo git fetch --all &&
+
+            echo "**git reset" &&
             sudo git reset --hard origin/main &&
+            
+            echo "**git pull" &&
             sudo git pull origin main
           '
