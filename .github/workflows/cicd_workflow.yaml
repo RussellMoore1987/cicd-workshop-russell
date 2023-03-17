@@ -43,7 +43,7 @@ jobs:
             sudo git reset --hard origin/main &&
             
             echo "**Command: git pull" &&
-            sudo git pull origin main && echo " " && echo " " &&
+            sudo git pull origin main && echo " " >> echo " " >>
 
             
             echo "**Command: npm install --omit=dev" &&
