@@ -29,25 +29,25 @@ jobs:
         run: |
           echo "$RSA_PRIVATE_KEY" > private_key && chmod 600 private_key
           ssh -o StrictHostKeyChecking=no -i private_key ${EC2_SSH_USERNAME}@${EC2_SSH_PUBLIC_IP_ADDRESS} '
-            echo -e "\n" &&
+            echo && \
 
             echo "**Command: navigating to directory cd /var/www/html --------------------" &&
-            cd /var/www/html && echo -e "\n\n" &&
+            cd /var/www/html && echo -e "\n" &&
 
             echo "**Command: checkout main -----------------------------------------------" &&
-            sudo git checkout main && echo -e "\n\n" &&
+            sudo git checkout main && echo -e "\n" &&
 
             echo "**Command: git fetch ---------------------------------------------------" &&
-            sudo git fetch --all && echo -e "\n\n" &&
+            sudo git fetch --all && echo -e "\n" &&
 
             echo "**Command: git reset ---------------------------------------------------" &&
-            sudo git reset --hard origin/main && echo -e "\n\n" &&
+            sudo git reset --hard origin/main && echo -e "\n" &&
             
             echo "**Command: git pull ----------------------------------------------------" &&
-            sudo git pull origin main && echo -e "\n\n" &&
+            sudo git pull origin main && echo -e "\n" &&
             
             echo "**Command: npm install --omit=dev --------------------------------------" &&
-            sudo npm install --omit=dev && echo -e "\n\n" &&
+            sudo npm install --omit=dev && echo -e "\n" &&
             
             echo "**Command: composer install -o --no-dev --------------------------------" &&
             sudo composer install -o --no-dev
