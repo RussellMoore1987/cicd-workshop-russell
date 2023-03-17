@@ -29,8 +29,11 @@ jobs:
         run: |
           echo "$RSA_PRIVATE_KEY" > private_key && chmod 600 private_key
           ssh -o StrictHostKeyChecking=no -i private_key ${EC2_SSH_USERNAME}@${EC2_SSH_PUBLIC_IP_ADDRESS} "
-            echo "**Command: navigating to directory cd /var/www/html -------------------- \n\n\n" && \n\n\n
-            cd /var/www/html &&
+            echo &&
+            
+            echo "**Command: navigating to directory cd /var/www/html -------------------- && /
+            cd /var/www/html && echo && echo &&
+
             echo "**Command: checkout main -----------------------------------------------" &&
             sudo git checkout main
           "
