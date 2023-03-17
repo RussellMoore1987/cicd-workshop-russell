@@ -46,5 +46,8 @@ jobs:
             sudo git pull origin main
 
             echo "**Command: npm install --omit=dev" &&
-            sudo npm install --omit=dev
+            sudo npm install --omit=dev &&
+
+            echo "**Command: composer install -o --no-dev" &&
+            sudo composer install -o --no-dev
           '
