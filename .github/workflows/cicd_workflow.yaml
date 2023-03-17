@@ -30,18 +30,21 @@ jobs:
           echo "$RSA_PRIVATE_KEY" > private_key && chmod 600 private_key
           ssh -o StrictHostKeyChecking=no -i private_key ${EC2_SSH_USERNAME}@${EC2_SSH_PUBLIC_IP_ADDRESS} '
           
-            echo "**navigating to directory" &&
+            echo "**Command: navigating to directory cd /var/www/html" &&
             cd /var/www/html &&
 
-            echo "**checkout main" &&
+            echo "**Command: checkout main" &&
             sudo git checkout main &&
 
-            echo "**git fetch" &&
+            echo "**Command: git fetch" &&
             sudo git fetch --all &&
 
-            echo "**git reset" &&
+            echo "**Command: git reset" &&
             sudo git reset --hard origin/main &&
             
-            echo "**git pull" &&
+            echo "**Command: git pull" &&
             sudo git pull origin main
+
+            echo "**Command: npm install --omit=dev" &&
+            npm install --omit=dev &&
           '
