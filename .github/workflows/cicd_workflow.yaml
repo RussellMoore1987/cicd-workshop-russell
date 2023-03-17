@@ -21,7 +21,7 @@ jobs:
     # needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy in EC2
+      - name: Deploy to EC2
         env:
             RSA_PRIVATE_KEY: ${{ secrets.RSA_PRIVATE_KEY  }}
             EC2_SSH_USERNAME : ${{ secrets.EC2_SSH_USERNAME  }}
@@ -46,5 +46,5 @@ jobs:
             sudo git pull origin main
 
             echo "**Command: npm install --omit=dev" &&
-            npm install --omit=dev &&
+            npm install --omit=dev
           '
