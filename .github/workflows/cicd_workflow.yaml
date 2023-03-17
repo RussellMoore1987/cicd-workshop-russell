@@ -48,7 +48,7 @@ jobs:
             echo "**Command: npm install --omit=dev" &&
             sudo npm install --omit=dev &&
 
-            echo " " >>
+            echo " " >> $GITHUB_STEP_SUMMARY
             echo "**Command: composer install -o --no-dev" &&
             sudo composer install -o --no-dev
           '
