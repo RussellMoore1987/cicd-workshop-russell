@@ -32,8 +32,8 @@ jobs:
     - name: Install Composer dependencies
       run: composer install
 
-  #   - name: Run PHPUnit tests
-  #     run: vendor/bin/phpunit
+    - name: Run PHPUnit tests
+      run: vendor/bin/phpunit
 
   # jobs:
   # laravel-tests:
