@@ -17,20 +17,20 @@ jobs:
   #   - name: Buid the application
   #     run: docker-compose exec -T counter_app npm run build
 
-  # build:
-  #   runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-latest
     
-  #   steps:
-  #   - name: Checkout code
-  #     uses: actions/checkout@v3
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
 
-  #   - name: Set up PHP
-  #     uses: shivammathur/setup-php@v2
-  #     with:
-  #       php-version: '8.1'
+    - name: Set up PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.1'
 
-  #   - name: Install Composer dependencies
-  #     run: composer install
+    - name: Install Composer dependencies
+      run: composer install
 
   #   - name: Run PHPUnit tests
   #     run: vendor/bin/phpunit
@@ -64,7 +64,7 @@ jobs:
   #     run: vendor/bin/phpunit
 
   deploy:
-    # needs: build
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to EC2
