@@ -16,7 +16,7 @@
                 }
                 
                 if ($i % 5 == 0) {
-                    $fizzBuzzString .= "Buzz2";
+                    $fizzBuzzString .= "Buzz";
                 }
 
                 $fizzBuzzArray[] = $fizzBuzzString;
